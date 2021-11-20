@@ -39,4 +39,9 @@ public class Display {
 		
 	}
 	
+	public void showNavigation() {
+		System.out.println("show directions");
+		return;
+		
+	}
 }

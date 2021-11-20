@@ -3,11 +3,41 @@
  */
 package StevePinskiSmartCarLab1;
 
+import edu.fiu.sysdesign.SelfCheckCapable;
+import edu.fiu.sysdesign.SelfCheckUtils;
+
 /**
  * @author spins
  *
  */
-public class CommandCenter {
+public class CommandCenter implements SelfCheckCapable {
+	
+	private Battery providesPower;
+	private Camera createsImages;
+	private Display mainDisplay;
+	private Engine powersVehicle;
+	private Sensor sensors;
+	private GPSSensor gps;
+	private LightSensor sensesLight;
+	private LowBatterySensor sensesBatteryLevel;
+	private ObjectSensor sensesObjects;
+	
+	
+	public CommandCenter() {
+		providesPower = new Battery();
+		createsImages = new Camera();
+		mainDisplay = new Display();
+		powersVehicle = new Engine();
+		gps = new GPSSensor();
+		sensesObjects = new ObjectSensor();
+		sensesBatteryLevel = new LowBatterySensor();
+		sensesLight = new LightSensor();
+		
+		
+		
+		
+	}
+	
 	
 	private int size;
 	
@@ -94,14 +124,58 @@ public class CommandCenter {
 		
 	}
 
+	public void turnOnLight() {
+		System.out.println("lights on");
+		return;
+		
+	}
+	
+	public void turnOffLight() {
+		System.out.println("lights off");
+		return;
+		
+	}
+	
+	public void pushToStartCar() {
+		System.out.println("start car");
+		return;
+		
+	}
+	
+	public void initiateAutoDrive() {
+		System.out.println("autodrive initiated");
+		return;
+		
+	}
+	
 	
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		CommandCenter myCommandCenter = new CommandCenter();
+		myCommandCenter.runSelfCheck();
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.5);
+	}
+	
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "My Command Center";
+	}
+
+	@Override
+	public boolean runSelfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.basicSelfCheckRunner(this);
 	}
 
 }
