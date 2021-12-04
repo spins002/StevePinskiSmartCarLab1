@@ -10,6 +10,10 @@ package StevePinskiSmartCarLab1;
 public class LowBatterySensor extends Sensor {
 
 
+	public LowBatterySensor() {
+		
+	}
+	
 	@Override
 	public void sendData() {
 		// TODO Auto-generated method stub

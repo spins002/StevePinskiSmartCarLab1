@@ -21,6 +21,7 @@ public class CommandCenter implements SelfCheckCapable {
 	private LightSensor sensesLight;
 	private LowBatterySensor sensesBatteryLevel;
 	private ObjectSensor sensesObjects;
+	private CyberScanner scansNetwork;
 	
 	
 	public CommandCenter() {
@@ -32,7 +33,7 @@ public class CommandCenter implements SelfCheckCapable {
 		sensesObjects = new ObjectSensor();
 		sensesBatteryLevel = new LowBatterySensor();
 		sensesLight = new LightSensor();
-		
+		scansNetwork = new CyberScanner();
 		
 		
 		
@@ -154,9 +155,29 @@ public class CommandCenter implements SelfCheckCapable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CommandCenter myCommandCenter = new CommandCenter();
-		myCommandCenter.runSelfCheck();
 		// TODO Auto-generated method stub
+		CommandCenter myCommandCenter = new CommandCenter();
+		Display mainDisplay = new Display();
+		ObjectSensor sensesObject = new ObjectSensor();
+		LowBatterySensor sensesBatteryLevel = new LowBatterySensor();
+		LightSensor sensesLight = new LightSensor();
+		GPSSensor gps = new GPSSensor();
+		Engine powersVehicle = new Engine();
+		CyberScanner scansNetwork = new CyberScanner();
+		Camera createsImages = new Camera();
+		Battery providesPower = new Battery();
+		myCommandCenter.runSelfCheck();
+		mainDisplay.runSelfCheck();
+		sensesObject.runSelfCheck();
+		sensesBatteryLevel.runSelfCheck();
+		sensesLight.runSelfCheck();
+		gps.runSelfCheck();
+		powersVehicle.runSelfCheck();
+		scansNetwork.runSelfCheck();
+		createsImages.runSelfCheck();
+		providesPower.runSelfCheck();
+		
+		
 
 	}
 

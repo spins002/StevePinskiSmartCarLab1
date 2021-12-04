@@ -10,34 +10,35 @@ import edu.fiu.sysdesign.SelfCheckUtils;
  * @author spins
  *
  */
-public class Battery implements SelfCheckCapable {
+public class CyberScanner implements SelfCheckCapable {
 
-	private int size;
 	
-	private double capacity;
-	
-	public Battery() {
+	public CyberScanner() {
 		
 	}
 	
-	public void maxBatteryPercentage() {
-		System.out.println("100%");
+	public void scanNetwork() {
+		System.out.println("Scanning Network");
+		return;
+	}
+	
+	public void detectIntruder() {
+		System.out.println("Searching For Intruders");
+		return;
+	
+	}
+	
+	public void alertIfIntruderFound() {
+		System.out.println("Intruder Found!");
 		return;
 		
 	}
 	
-	public void minBatteryPercentage() {
-		System.out.println("0%");
+	public void clearSystemGo() {
+		System.out.println("Safe To Start Auto Features");
 		return;
-		
 	}
-	
-	public void givePower() {
-		System.out.println("power supplied");
-		return;
-		
-	}
-	
+
 	@Override
 	public boolean selfCheck() {
 		// TODO Auto-generated method stub
@@ -47,7 +48,7 @@ public class Battery implements SelfCheckCapable {
 	@Override
 	public String getComponentName() {
 		// TODO Auto-generated method stub
-		return "My Battery";
+		return "My Cyber Scanner";
 	}
 
 	@Override
@@ -56,5 +57,6 @@ public class Battery implements SelfCheckCapable {
 		return SelfCheckUtils.basicSelfCheckRunner(this);
 	}
 
-	
+
 }
+

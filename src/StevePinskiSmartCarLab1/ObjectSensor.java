@@ -10,6 +10,10 @@ package StevePinskiSmartCarLab1;
 public class ObjectSensor extends Sensor {
 
 
+	public ObjectSensor() {
+		
+	}
+	
 	@Override
 	public void sendData() {
 		// TODO Auto-generated method stub

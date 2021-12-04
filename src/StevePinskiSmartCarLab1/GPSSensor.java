@@ -10,6 +10,10 @@ package StevePinskiSmartCarLab1;
 public class GPSSensor extends Sensor {
 
 	
+	public GPSSensor() {
+		
+	}
+	
 	@Override
 	public void sendData() {
 		// TODO Auto-generated method stub

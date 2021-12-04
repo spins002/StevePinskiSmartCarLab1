@@ -10,6 +10,9 @@ package StevePinskiSmartCarLab1;
 public class LightSensor extends Sensor {
 
 	
+	public LightSensor() {
+		
+	}
 	
 	@Override
 	public void sendData() {
